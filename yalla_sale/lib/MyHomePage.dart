@@ -7,15 +7,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Yalla Sale',
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(
+
+      ),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
       home: MyHomePage(),
     );
   }
 }
-
-
-
 class MyHomePage extends StatefulWidget {
  // MyHomePage({Key key, this.title}) : super(key: key);
  // final String title;
@@ -608,7 +607,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Image.asset("images/project_logo.png")
                       ],
                     ),
-                  )
+                  ),
                 ],
               )
             ]
