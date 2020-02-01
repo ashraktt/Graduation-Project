@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'MyHomePage.dart';
 import 'colors.dart';
 import 'style.dart';
 import 'MyHomePage.dart';
@@ -45,7 +46,7 @@ class _LoginPageState extends State<LoginPage>
       ),
     );
   }
-  Container fryoPasswordInput(String hintText,
+        Container fryoPasswordInput(String hintText,
       {onTap, onChanged, onEditingComplete, onSubmitted}) {
     return Container(
       margin: EdgeInsets.only(top: 13),
@@ -113,7 +114,7 @@ class _LoginPageState extends State<LoginPage>
                     right: -15,
                     child: FlatButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, "MyHomePage");
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>MyHomePage()) );
                       },
                       color: primaryColor,
                       padding: EdgeInsets.all(13),
