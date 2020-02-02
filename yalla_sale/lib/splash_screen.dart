@@ -11,20 +11,20 @@ class splash_screen extends StatefulWidget {
 }
 
 class _Splash_ScreenState extends State<splash_screen>{
- @override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
     startTimer();
   }
   startTimer () async {
-   var duration = Duration (seconds: 4);
-   return Timer (duration,route);
+    var duration = Duration (seconds: 4);
+    return Timer (duration,route);
   }
   route(){
-   Navigator.pushReplacement(context, MaterialPageRoute(
-     builder: (context) => LoginPage()
-   ));
+    Navigator.pushReplacement(context, MaterialPageRoute(
+        builder: (context) => Login()
+    ));
   }
   @override
   Widget build(BuildContext context) {

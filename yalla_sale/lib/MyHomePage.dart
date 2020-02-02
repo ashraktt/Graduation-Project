@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:yalla_sale/RagabPage.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'Product.dart';
+import 'RagabPage.dart';
 import 'OriflamePage.dart';
 
 class MyApp extends StatelessWidget {
