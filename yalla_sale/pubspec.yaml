@@ -44,6 +44,32 @@ flutter:
   assets:
   - images/project_logo.png
   - images/flower.jpg
+  - images/oriflame_logo.jpg
+  - images/oriflame/0.jpg
+  - images/oriflame/1.jpg
+  - images/oriflame/2.jpg
+  - images/oriflame/3.jpg
+  - images/oriflame/4.jpg
+  - images/oriflame/5.jpg
+  - images/oriflame/6.jpg
+  - images/oriflame/7.jpg
+  - images/oriflame/8.jpg
+  - images/oriflame/9.jpg
+  - images/oriflame/10.jpg
+  - images/oriflame/11.jpg
+  - images/Awlad_Ragab_logo.jpg
+  - images/Awlad Ragab/0.jpg
+  - images/Awlad Ragab/1.jpg
+  - images/Awlad Ragab/2.jpg
+  - images/Awlad Ragab/3.jpg
+  - images/Awlad Ragab/4.jpg
+  - images/Awlad Ragab/5.jpg
+  - images/Awlad Ragab/6.jpg
+  - images/Awlad Ragab/7.jpg
+  - images/Awlad Ragab/8.jpg
+  - images/Awlad Ragab/9.jpg
+  - images/Awlad Ragab/10.jpg
+  - images/Awlad Ragab/11.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

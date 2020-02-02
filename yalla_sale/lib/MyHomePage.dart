@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:yalla_sale/RagabPage.dart';
+import 'OriflamePage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -7,14 +9,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Yalla Sale',
-      theme: ThemeData.light(
-
-      ),
+      theme: ThemeData.dark(),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
       home: MyHomePage(),
     );
   }
 }
+
+
+
 class MyHomePage extends StatefulWidget {
  // MyHomePage({Key key, this.title}) : super(key: key);
  // final String title;
@@ -452,21 +455,47 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisCount: 3,
                 childAspectRatio: 16.0 / 20.0,
                 children: <Widget>[
-                  Card(
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset("images/project_logo.png",),
-                        Text("احلى مسا عليك"),
-                      ],
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(
+                          MaterialPageRoute(
+                              builder: (context) => OriflamePage()
+                          )
+                      );
+                    },
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset("images/oriflame_logo.jpg",),
+                          Text(
+                            "ORIFLAME",
+                            style: TextStyle(fontSize: 20 ),
+                          ),
+                        ],
+                      ),
+                    ) ,
                   ),
-                  Card(
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset("images/project_logo.png",),
-                        Text("احلى مسا عليك"),
-                      ],
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(
+                          MaterialPageRoute(
+                              builder: (context) => RagabPage()
+                          )
+                      );
+                    },
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset("images/Awlad_Ragab_logo.jpg",),
+                          Text(
+                            "أولاد رجب",
+                            style: TextStyle(fontSize: 20 ),
+                          ),
+                        ],
+                      ),
+                    ) ,
                   ),
                   Card(
                     child: Column(
@@ -607,7 +636,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Image.asset("images/project_logo.png")
                       ],
                     ),
-                  ),
+                  )
                 ],
               )
             ]
