@@ -2,9 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'MyHomePage.dart';
-import 'colors.dart';
-import 'style.dart';
-import 'MyHomePage.dart';
+
+class Login extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return  MaterialApp(
+     theme: ThemeData.light(),
+     home: LoginPage(),
+);
+  }
+}
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,121 +23,226 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage>
 {
-  var check  = true;
+  var check =true;
   void onchange(val){
     print(val);
     setState(() {
       check=val;
     });
   }
+
   void done(){
     print("done");
-  }
-  Container fryoTextInput(String hintText,
-      {onTap, onChanged, onEditingComplete, onSubmitted}) {
-    return Container(
-      margin: EdgeInsets.only(top: 13),
-      child: TextField(
-        onTap: onTap,
-        onChanged: onChanged,
-        onEditingComplete: onEditingComplete,
-        onSubmitted: onSubmitted,
-        cursorColor: primaryColor,
-        style: inputFieldTextStyle,
-        decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: inputFieldHintTextStyle,
-            focusedBorder: inputFieldFocusedBorderStyle,
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            border: inputFieldDefaultBorderStyle),
-      ),
-    );
-  }
-        Container fryoPasswordInput(String hintText,
-      {onTap, onChanged, onEditingComplete, onSubmitted}) {
-    return Container(
-      margin: EdgeInsets.only(top: 13),
-      child: TextField(
-        onTap: onTap,
-        onChanged: onChanged,
-        onEditingComplete: onEditingComplete,
-        onSubmitted: onSubmitted,
-        obscureText: true,
-        cursorColor: primaryColor,
-        style: inputFieldHintPaswordTextStyle,
-        decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: inputFieldHintPaswordTextStyle,
-            focusedBorder: inputFieldFocusedBorderStyle,
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            border: inputFieldDefaultBorderStyle),
-      ),
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: white,
-          title: Text('Sign In',
-              style: TextStyle(
-                  color: Colors.grey, fontFamily: 'Poppins', fontSize: 15)),
-          actions: <Widget>[
-            FlatButton(
-              onPressed: () {
-                // Navigator.of(context).pushReplacementNamed('/signup');
-                Navigator.pushNamed(context,"MyHomePage");
+    return Scaffold(
+      body: ListView(
 
-              },
-              child: Text('Sign Up', style: contrastText),
-            )
-          ],
-        ),
-        body: ListView(
-          shrinkWrap: true,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(left: 18, right: 18),
-              child: Stack(
-                children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Welcome Back!', style: h3),
-                      Text('Howdy, let\'s authenticate', style: taglineText),
-                      fryoTextInput('Username'),
-                      fryoPasswordInput('Password'),
-                      FlatButton(
-                        onPressed: () {},
-                        child: Text('Forgot Password?', style: contrastTextBold),
-                      )
-                    ],
+              width:MediaQuery.of(context).size.width ,
+              height:755,
+              child:Column(
+                children :<Widget>[
+                  Padding(
+                    child: Image.asset("images/project_logo.png",width: 150,height: 100,),
+                    padding: EdgeInsets.only(top: 50),
+
                   ),
-                  Positioned(
-                    bottom: 15,
-                    right: -15,
-                    child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>MyHomePage()) );
-                      },
-                      color: primaryColor,
-                      padding: EdgeInsets.all(13),
-                      shape: CircleBorder(),
-                      child: Icon(Icons.arrow_forward, color: white),
+                  SizedBox(
+                    width:MediaQuery.of(context).size.width ,
+//              height:MediaQuery.of(context).size.height ,
+
+                    child: Row(
+                      children :<Widget>[
+                        Card(
+
+                          child: SizedBox(
+                            //width: 430,
+                            // height: 500,
+                            child: Column(
+                              children :<Widget>[
+                                Card(
+
+                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                    //color: Colors.lime,
+                                    child:SizedBox(
+
+                                      height: 70,width: 300,
+                                      child: TextFormField(
+
+                                        maxLines: 1, maxLength: 20,
+                                        cursorColor: Colors.black,
+                                        autofocus: false,
+                                        style: TextStyle(
+                                          decorationColor: Colors.limeAccent,
+                                          wordSpacing: .5,  fontSize: 15, // height: 20,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+
+                                        keyboardType: TextInputType.visiblePassword,
+                                        textInputAction: TextInputAction.next,
+                                        //obscureText: true,
+
+                                        decoration: InputDecoration(
+
+                                          //hintText: "Enter Password" ,
+                                          prefixIcon: Icon(Icons.account_circle),
+                                          prefixText: "Email :- ",
+                                          border: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Colors.amber,
+                                              width: 02.0,
+                                              style: BorderStyle.solid,
+                                            ),
+                                            borderRadius: BorderRadius.circular(50.0),
+                                          ),
+                                          labelText:  "Enter Email",
+                                        ),
+                                      ),
+                                    )
+
+                                ),
+                                Card(
+                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                    //color: Colors.lime,
+                                    child: SizedBox(
+                                      height: 70,width: 300,
+                                      child: TextFormField(
+                                        maxLines: 1, maxLength: 20,
+                                        cursorColor: Colors.black,
+                                        autofocus: false,
+                                        style: TextStyle(
+                                          decorationColor: Colors.limeAccent,
+                                          wordSpacing: .5,  fontSize: 15, // height: 20,
+                                          fontStyle: FontStyle.italic,
+
+                                        ),
+                                        keyboardType: TextInputType.visiblePassword,
+                                        textInputAction: TextInputAction.next,
+                                        obscureText: true,
+                                        decoration: InputDecoration(
+
+                                          //hintText: "Enter Password" ,
+                                          prefixIcon: Icon(Icons.lock_outline),
+                                          prefixText: "Password :- ",
+                                          border: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Colors.amber,
+                                              width: 3.0,
+                                              style: BorderStyle.solid,
+                                            ),
+                                            borderRadius: BorderRadius.circular(50.0),
+                                          ),
+                                          labelText:  "Enter Password",
+                                        ),
+                                      ),
+                                    )
+
+                                ),
+
+                                Card(
+                                    margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                    //color: Colors.lime,
+                                    child: SizedBox(
+                                        height: 30,width: 100,
+                                        child:FlatButton(
+                                          onPressed:(){
+                                            Navigator.of(context)
+                                                .push(
+                                                MaterialPageRoute(
+                                                    builder: (context) => MyApp()
+                                                )
+                                            );
+                                          },
+                                          child: Text("Log In"),
+                                          color: Colors.green,
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(16.0)
+                                          ),
+
+                                        )
+
+                                    )
+
+                                ),
+                                Card(
+                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                  //color: Colors.lime,
+                                  child: SizedBox(
+
+                                      height:45,width: 250,
+                                      child:CheckboxListTile(
+
+                                        value: check,
+                                        onChanged: onchange,
+                                        checkColor:Colors.black,
+                                        activeColor:Colors.green ,
+                                        title: Text("Remember Me"),
+
+                                      )
+
+                                  ),
+                                ),
+                                /*Card(
+                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),color: Colors.lime,
+                                  child: SizedBox(
+                                      height: 30,width: 120,
+                                      child:FlatButton(
+
+                                        onPressed: done,
+                                        //label: Text('Done'),
+                                        child: Text("Registration"),
+                                      )
+                                  )
+                              ),*/
+                                Card(
+                                    child: SizedBox(
+                                      //height: 30,width: 100,
+                                      child: Divider(
+                                        height: 2,
+                                        color: Colors.red,
+                                        indent: 300,
+                                        thickness: 50,
+                                      ),
+                                    )
+
+                                ),
+                                Card(
+                                    margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                    //color: Colors.lime,
+
+                                    child: SizedBox(
+                                      //height: 30,width: 100,
+                                      child: Text("Designed by YallaSale"),
+                                    )
+
+                                ),
+                              ],
+                            ),
+                          ),
+                          //color: Colors.lime,
+                          margin: EdgeInsets.fromLTRB(40, 0/*it will change*/, 20, 100),
+                        ),
+                      ],
                     ),
-                  )
+                  ),
                 ],
               ),
-              height: 245,
+              // color:Colors.green ,
 
-              width: double.infinity,
-              decoration: authPlateDecoration,
+
             ),
-          ],
-        )
+          ]
+
+      ),
+      appBar: AppBar(
+        title: Text("Log In"),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
     );
   }
 }
