@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Image.asset("images/project_logo.png",
                           width: (imgWidth != null) ? imgWidth : 100)))),
           Positioned(
-            bottom: 70,
+            bottom: 100,
             right: 0,
             child: FlatButton(
               padding: EdgeInsets.all(20),
@@ -715,8 +715,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -778,8 +778,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -841,8 +841,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -904,8 +904,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -967,8 +967,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -1030,8 +1030,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
+                                Text("غساله",style: TextStyle(color: Colors.black,fontSize: 30)),
+                                Text("\$1500",style: TextStyle(color: Colors.black,fontSize: 20)),
                                 Container(
                                   margin: EdgeInsets.only(top: 5, bottom: 20),
                                   child: SmoothStarRating(
@@ -1078,69 +1078,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(),
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  child: Center(
-                    child: Stack(
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            margin: EdgeInsets.only(top: 100, bottom: 100),
-                            padding: EdgeInsets.only(top: 100, bottom: 50),
-                            width: MediaQuery.of(context).size.width * 0.85,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text("غساله"),
-                                Text("\$1500"),
-                                Container(
-                                  margin: EdgeInsets.only(top: 5, bottom: 20),
-                                  child: SmoothStarRating(
-                                    allowHalfRating: false,
-                                    onRatingChanged: (v) {
-                                      setState(() {
-                                        _rating = v;
-                                      });
-                                    },
-                                    starCount: 5,
-                                    rating: _rating,
-                                    size: 27.0,
-                                    color: Colors.orange,
-                                    borderColor: Colors.orange,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                      blurRadius: 15,
-                                      spreadRadius: 5,
-                                      color: Color.fromRGBO(0, 0, 0, .05))
-                                ]),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: SizedBox(
-                            width: 200,
-                            height: 160,
-                            child: foodItem(
-                                isProductPage: true,
-                                onTapped: () {},
-                                imgWidth: 250,
-                                onLike: () {}),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Divider(),
+
 
 
               ],
