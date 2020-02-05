@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:grafpix/icons.dart';
+import 'package:grafpix/pixloaders/pix_loader.dart';
+import 'package:grafpix/pixbuttons/radial.dart';
+
 import 'Home.dart';
+import 'MyHomePage.dart';
 import 'loginpage.dart';
 import 'model/users.dart';
 import 'dart:async';
@@ -41,7 +46,7 @@ class stateRegistration extends State<Registration>
       'Uemail':Uemail,
     });
     print(add);
-    Navigator.push(context,MaterialPageRoute(builder: (context)=> Home()) );
+    Navigator.push(context,MaterialPageRoute(builder: (context)=> MyHomePage()) );
     }
     else{
       print("error");
@@ -111,15 +116,16 @@ class stateRegistration extends State<Registration>
                     child: Row(
                       children :<Widget>[
                         Card(
-
+                          color:Colors.white,
+                          elevation: 20,
                           child: SizedBox(
                             //width: 430,
                             // height: 500,
                             child: Column(
                               children :<Widget>[
-                                Card(
+                                Padding(
 
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                    padding: EdgeInsets.all(20),
                                     //color: Colors.lime,
                                     child:SizedBox(
 
@@ -127,7 +133,7 @@ class stateRegistration extends State<Registration>
                                       child: TextFormField(
 
                                         maxLines: 1, maxLength: 20,
-                                        cursorColor: Colors.black,
+                                        cursorColor: Colors.lightGreen,
                                         autofocus: false,
                                         style: TextStyle(
                                           decorationColor: Colors.limeAccent,
@@ -144,7 +150,7 @@ class stateRegistration extends State<Registration>
 
                                           //hintText: "Enter Password" ,
                                           prefixIcon: Icon(Icons.account_circle),
-                                          prefixText: "Name : ",
+                                          //prefixText: "Name : ",
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.amber,
@@ -159,9 +165,9 @@ class stateRegistration extends State<Registration>
                                     )
 
                                 ),
-                                Card(
+                                Padding(
 
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                    padding: EdgeInsets.fromLTRB(10,10, 10, 5),
                                     //color: Colors.lime,
                                     child:SizedBox(
 
@@ -185,7 +191,7 @@ class stateRegistration extends State<Registration>
 
                                           //hintText: "Enter Password" ,
                                           prefixIcon: Icon(Icons.account_circle),
-                                          prefixText: "Email : ",
+                                         // prefixText: "Email : ",
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.amber,
@@ -200,8 +206,9 @@ class stateRegistration extends State<Registration>
                                     )
 
                                 ),
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                Padding(
+
+                                    padding: EdgeInsets.fromLTRB(10,10, 10, 5),
                                     //color: Colors.lime,
                                     child: SizedBox(
                                       height: 50,width: 300,
@@ -209,7 +216,7 @@ class stateRegistration extends State<Registration>
                                         onChanged: ChUpass1,
                                         maxLines: 1, maxLength: 20,
                                         cursorColor: Colors.black,
-                                        autofocus: true,
+                                        //autofocus: true,
                                         style: TextStyle(
                                           decorationColor: Colors.limeAccent,
                                           wordSpacing: .5,  fontSize: 15, // height: 20,
@@ -223,7 +230,7 @@ class stateRegistration extends State<Registration>
 
                                           //hintText: "Enter Password" ,
                                           prefixIcon: Icon(Icons.lock_outline),
-                                          prefixText: "Password : ",
+                                          //prefixText: "Password : ",
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.amber,
@@ -238,8 +245,8 @@ class stateRegistration extends State<Registration>
                                     )
 
                                 ),
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10,10, 10, 5),
                                     //color: Colors.lime,
                                     child: SizedBox(
                                       height: 50,width: 300,
@@ -261,7 +268,7 @@ class stateRegistration extends State<Registration>
 
                                           //hintText: "Enter Password" ,
                                           prefixIcon: Icon(Icons.lock_outline),
-                                          prefixText: "Confirm Password : ",
+                                          //prefixText: "Confirm Password : ",
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.amber,
@@ -276,11 +283,11 @@ class stateRegistration extends State<Registration>
                                     )
 
                                 ),
-                                Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(10,10, 10,10),
                                   //color: Colors.lime,
                                   child: SizedBox(
-                                      height:45,width: 250,
+                                      height:45,width: 85,
                                       child:DropdownButton<String>(
                                         value: Gender,
                                         onChanged: Gnderchange,
@@ -298,43 +305,24 @@ class stateRegistration extends State<Registration>
                                   ),
                                 ),
 
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10,10, 10,20),
                                     //color: Colors.lime,
                                     child: SizedBox(
-                                        height: 30,width: 100,
-                                        child:FlatButton(
+                                        child:PixButton(
+                                            icon: PixIcon.Text,
+                                            radius: 30.0,
+                                            iconSize: 25.0,
+                                            iconColor: Colors.white,
+                                            backgroundColor: Colors.green[500],
+                                            shutter: 0.5,
 
-                                          onPressed: done,
-                                          //label: Text('Done'),
-                                          child: Text("Log In"),
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(16.0)
-                                          ),
-                                          color: Colors.green,
-                                        )
+                                            twinkles: true,
+                                            onPress: done
+                                        ),
 
                                     )
 
-                                ),
-                                Card(
-                                    child: SizedBox(
-                                      //height: 30,width: 100,
-                                      child: Divider(
-                                        height: 2,
-                                        color: Colors.red,
-                                        indent: 300,
-                                        thickness: 50,
-                                      ),
-                                    )
-                                ),
-                                Card(
-                                    //margin: EdgeInsets.fromLTRB(0,20, 10,10),
-                                    //color: Colors.lime,
-                                    child: SizedBox(
-                                      //height: 30,width: 100,
-                                      child: Text("Designed by YallaSale"),
-                                    )
                                 ),
 
                               ],

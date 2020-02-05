@@ -64,9 +64,9 @@ class _LoginPageState extends State<LoginPage>
                             // height: 500,
                             child: Column(
                               children :<Widget>[
-                                Card(
+                                Padding(
 
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                    padding: EdgeInsets.fromLTRB(10,20, 10, 5),
                                     //color: Colors.lime,
                                     child:SizedBox(
 
@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage>
 
                                           //hintText: "Enter Password" ,
                                           prefixIcon: Icon(Icons.account_circle),
-                                          prefixText: "Email :- ",
+                                          //prefixText: "Email :- ",
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color: Colors.amber,
@@ -105,8 +105,8 @@ class _LoginPageState extends State<LoginPage>
                                     )
 
                                 ),
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10,20, 10, 5),
                                     //color: Colors.lime,
                                     child: SizedBox(
                                       height: 70,width: 300,
@@ -143,8 +143,8 @@ class _LoginPageState extends State<LoginPage>
 
                                 ),
 
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                Padding(
+                                    padding: EdgeInsets.fromLTRB(10,20, 10,10),
                                     //color: Colors.lime,
                                     child: SizedBox(
                                         height: 30,width: 100,
@@ -168,11 +168,10 @@ class _LoginPageState extends State<LoginPage>
                                     )
 
                                 ),
-                                Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(10,20, 10,10),
                                   //color: Colors.lime,
                                   child: SizedBox(
-
                                       height:45,width: 250,
                                       child:CheckboxListTile(
 
@@ -198,28 +197,6 @@ class _LoginPageState extends State<LoginPage>
                                       )
                                   )
                               ),*/
-                                Card(
-                                    child: SizedBox(
-                                      //height: 30,width: 100,
-                                      child: Divider(
-                                        height: 2,
-                                        color: Colors.red,
-                                        indent: 300,
-                                        thickness: 50,
-                                      ),
-                                    )
-
-                                ),
-                                Card(
-                                    margin: EdgeInsets.fromLTRB(10,20, 10,10),
-                                    //color: Colors.lime,
-
-                                    child: SizedBox(
-                                      //height: 30,width: 100,
-                                      child: Text("Designed by YallaSale"),
-                                    )
-
-                                ),
                               ],
                             ),
                           ),

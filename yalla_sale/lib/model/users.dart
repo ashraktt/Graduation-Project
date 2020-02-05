@@ -36,11 +36,12 @@ class UsData{
   Future<bool> find(String Uemail,String pass)async{
     var dbclient=await db;
     List<Map> list = await dbclient.rawQuery('SELECT * FROM $table');
-    print(list);
+    //print(list);
     for(int i=0;i<list.length;i++)
       {
         if(list[i]['Uemail']==Uemail && list[i]['Pass']==pass)
           {
+            print("aaa");
             return true;
           }
       }

@@ -2,6 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'Home.dart';
 import 'loginpage.dart';
+import 'package:grafpix/icons.dart';
+import 'package:grafpix/pixloaders/pix_loader.dart';
+import 'package:grafpix/pixbuttons/radial.dart';
 class splash_screen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -19,7 +22,7 @@ class _Splash_ScreenState extends State<splash_screen>{
     startTimer();
   }
   startTimer () async {
-    var duration = Duration (seconds: 4);
+    var duration = Duration (seconds: 5);
     return Timer (duration,route);
   }
   route(){
@@ -40,9 +43,14 @@ class _Splash_ScreenState extends State<splash_screen>{
               child: Image.asset("images/project_logo.png"),
             ),
             Padding(padding: EdgeInsets.only(top: 20),),
-            CircularProgressIndicator(
+            /*CircularProgressIndicator(
+
               backgroundColor: Colors.white,
               strokeWidth: 5,
+            )*/
+            PixLoader(
+              loaderType: LoaderType.Spinner,
+              faceColor: Colors.green,
             )
           ],
         ),

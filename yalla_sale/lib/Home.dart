@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'MyHomePage.dart';
 import 'Registration.dart';
 import 'model/users.dart';
 import 'dart:async';
@@ -41,6 +42,10 @@ class stateHome extends State<Home>
     // user().inert();
     Future <bool> isfind = UsData().find(Uemail,Upass);
     print(isfind);
+    if(isfind==true)
+      {
+        Navigator.push(context,MaterialPageRoute(builder: (context)=> MyHomePage()) );
+      }
   }
 
   @override
@@ -67,15 +72,19 @@ class stateHome extends State<Home>
                   child: Row(
                     children :<Widget>[
                       Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(27.0)
+                        ),
+                        elevation: 20,
 
                         child: SizedBox(
                           //width: 430,
                           // height: 500,
                           child: Column(
                             children :<Widget>[
-                             Card(
+                             Padding(
 
-                                  margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                                  padding: EdgeInsets.fromLTRB(10,20, 10, 5),
                                  //color: Colors.lime,
                                   child:SizedBox(
 
@@ -99,7 +108,7 @@ class stateHome extends State<Home>
 
                                         //hintText: "Enter Password" ,
                                         prefixIcon: Icon(Icons.account_circle),
-                                        prefixText: "Email : ",
+                                        //prefixText: "Email : ",
                                         border: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Colors.amber,
@@ -114,8 +123,8 @@ class stateHome extends State<Home>
                                   )
 
                               ),
-                              Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10, 5),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(10,20, 10, 5),
 
                                   //color: Colors.lime,
                                   child: SizedBox(
@@ -138,7 +147,7 @@ class stateHome extends State<Home>
 
                                         //hintText: "Enter Password" ,
                                         prefixIcon: Icon(Icons.lock_outline),
-                                        prefixText: "Password : ",
+                                        //prefixText: "Password : ",
                                         border: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Colors.amber,
@@ -154,8 +163,8 @@ class stateHome extends State<Home>
 
                               ),
 
-                              Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(10,20, 10,10),
                                   //color: Colors.lime,
                                   child: SizedBox(
                                       height: 30,width: 100,
@@ -173,12 +182,12 @@ class stateHome extends State<Home>
                                   )
 
                               ),
-                              Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(10,20, 10,10),
                                 //color: Colors.lime,
                                   child: SizedBox(
 
-                                      height:45,width: 250,
+                                      height:45,width: 210,
                                       child:CheckboxListTile(
 
                                         value: check,
@@ -191,48 +200,26 @@ class stateHome extends State<Home>
 
                               ),
                               ),
-                              /*Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),color: Colors.lime,
+
+                              Padding(
+                                  padding: EdgeInsets.fromLTRB(10,20, 10,10),//color: Colors.lime,
                                   child: SizedBox(
                                       height: 30,width: 120,
                                       child:FlatButton(
-
-                                        onPressed: done,
+                                        color: Colors.lightGreen,
+                                        onPressed: (){    Navigator.push(context,MaterialPageRoute(builder: (context)=>Registration()) );
+                                        },
                                         //label: Text('Done'),
-                                        child: Text("Registration"),
+                                        child: Text("registration"),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(16.0)
+                                        ),
                                       )
                                   )
-                              ),*/
-                              Card(
-                                  child: SizedBox(
-                                      //height: 30,width: 100,
-                                      child: Divider(
-                                        height: 2,
-                                        color: Colors.red,
-                                        indent: 300,
-                                        thickness: 50,
-                                      ),
-                                  )
-
                               ),
-                              Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
-                                  //color: Colors.lime,
 
-                                  child: SizedBox(
-                                    //height: 30,width: 100,
-                                    child: Text("Designed by YallaSale"),
-                                  )
 
-                              ),
-                              FlatButton(
 
-                                onPressed: (){    Navigator.push(context,MaterialPageRoute(builder: (context)=>Registration()) );
-                                },
-                                //label: Text('Done'),
-                                child: Text("registration"),
-
-                              )
                             ],
                            ),
                         ),
