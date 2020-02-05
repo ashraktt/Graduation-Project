@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 class UsData{
   String table = 'Uaccount';
   static Database _db;
-
+ bool islogin=false;
   Future<Database> get db async{
     if(_db == null){
       _db = await initialDB();
@@ -33,18 +33,21 @@ class UsData{
     //await dbclient.close();
     return insert;
   }
-  Future<bool> find(String Uemail,String pass)async{
+  void find(String Uemail,String pass)async{
     var dbclient=await db;
     List<Map> list = await dbclient.rawQuery('SELECT * FROM $table');
+    //bool val=false;
+
     print(list);
     for(int i=0;i<list.length;i++)
       {
         if(list[i]['Uemail']==Uemail && list[i]['Pass']==pass)
           {
-            return true;
+            islogin =true;
+            print(islogin);
           }
       }
-    return false;
+    //return islogin;
   }
 
 

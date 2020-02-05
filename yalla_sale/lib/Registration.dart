@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'Home.dart';
-import 'loginpage.dart';
+import 'package:yalla_sale/MyHomePage.dart';
+import 'login.dart';
 import 'model/users.dart';
 import 'dart:async';
 
