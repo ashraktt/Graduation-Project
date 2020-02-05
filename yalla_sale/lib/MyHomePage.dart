@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:yalla_sale/RagabPage.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:yalla_sale/login.dart';
 import 'Product.dart';
 import 'RagabPage.dart';
 import 'OriflamePage.dart';
-
-class MyApp extends StatelessWidget {
+import 'fav.dart';
+class Home extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Color col= Colors.white ;
+  bool fav =false;
   Padding circleAvatar(String pic) {
     return Padding(
       padding: EdgeInsets.all(10),
@@ -149,9 +152,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   leading: Icon(Icons.notifications,
                       color: Colors.orangeAccent, size: 35),
                 ),
-                ListTile(
-                  title: Text("My Faviorate", style: TextStyle(fontSize: 20)),
-                  leading: Icon(Icons.favorite, color: Colors.red, size: 35),
+                InkWell(
+                  onTap: (){
+                    if(fav == true){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MyFav(card("images/Awlad_Ragab_logo.jpg","اولاد رجب "))
+                      ) );
+                    }
+                    else {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MyFav(Center(child: Text("NO Fav" ,style:TextStyle(fontSize: 20),),))));
+                    }
+
+                  },
+                  child: ListTile(
+                    title: Text("My Faviorate", style: TextStyle(fontSize: 20)),
+                    leading: Icon(Icons.favorite, color: Colors.red, size: 35),
+                  ),
                 ),
                 ListTile(
                   title: Text("Rate App", style: TextStyle(fontSize: 20)),
@@ -168,9 +185,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   leading: Icon(Icons.contact_mail,
                       color: Colors.green[500], size: 35),
                 ),
-                ListTile(
-                  title: Text("Log Out", style: TextStyle(fontSize: 20)),
-                  leading: Icon(Icons.lock, color: Colors.black, size: 35),
+                InkWell(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) =>LoginPage() ),);
+                  },
+                  child: ListTile(
+
+                    title: Text("Log Out", style: TextStyle(fontSize: 20)),
+                    leading: Icon(Icons.lock, color: Colors.black, size: 35),
+                  ),
                 ),
               ],
             ),
@@ -496,46 +520,32 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             GridView.count(
               crossAxisCount: 3,
-              childAspectRatio: 16.0 / 20.0,
+              childAspectRatio: 14.0 / 20.0,
               children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => OriflamePage()));
-                  },
-                  child: Card(
-                    child: Column(
+                Card(
+                      child: Column(
                       children: <Widget>[
-                        Image.asset(
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => OriflamePage()));
+                          },
+                          child:  Image.asset(
                           "images/oriflame_logo.jpg",
                         ),
+                       ),
                         Text(
                           "ORIFLAME",
                           style: TextStyle(fontSize: 20),
                         ),
+                        Icon(Icons.favorite),
                       ],
                     ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => RagabPage()));
-                  },
-                  child: Card(
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(
-                          "images/Awlad_Ragab_logo.jpg",
-                        ),
-                        Text(
-                          "أولاد رجب",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+
+                card("images/Awlad_Ragab_logo.jpg","اولاد رجب") ,
+
+
                 Card(
                   child: Column(
                     children: <Widget>[
@@ -1084,6 +1094,43 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             )
           ])),
+    );
+  }
+
+
+
+  Widget card (String img ,String text ){
+    return Card (
+      child: Column(
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => RagabPage()));
+            },
+            child: Image.asset( img ),
+          ),
+          GestureDetector(
+            onDoubleTap: () {
+              setState(() {
+                fav=true;
+                col=Colors.red;
+              });
+
+            },
+            child: Column(
+              children: <Widget>[
+                Text(
+                  text ,
+                  style: TextStyle(fontSize: 20),
+                ),
+                Icon(Icons.favorite,color: col,),
+              ],
+            ),
+
+          )
+        ],
+      ),
     );
   }
 }

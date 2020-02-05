@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+<<<<<<< HEAD
 import 'package:grafpix/icons.dart';
 import 'package:grafpix/pixloaders/pix_loader.dart';
 import 'package:grafpix/pixbuttons/radial.dart';
@@ -8,6 +9,10 @@ import 'package:grafpix/pixbuttons/radial.dart';
 import 'Home.dart';
 import 'MyHomePage.dart';
 import 'loginpage.dart';
+=======
+import 'package:yalla_sale/MyHomePage.dart';
+import 'login.dart';
+>>>>>>> 0b88579b875d3483964d6c8326f295770793aeab
 import 'model/users.dart';
 import 'dart:async';
 
