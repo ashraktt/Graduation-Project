@@ -36,24 +36,20 @@ class UsData{
   void find(String Uemail,String pass)async{
     var dbclient=await db;
     List<Map> list = await dbclient.rawQuery('SELECT * FROM $table');
-<<<<<<< HEAD
     //print(list);
-=======
     //bool val=false;
 
     print(list);
->>>>>>> 0b88579b875d3483964d6c8326f295770793aeab
+
     for(int i=0;i<list.length;i++)
       {
         if(list[i]['Uemail']==Uemail && list[i]['Pass']==pass)
           {
-<<<<<<< HEAD
+
             print("aaa");
-            return true;
-=======
+           // return true;
             islogin =true;
             print(islogin);
->>>>>>> 0b88579b875d3483964d6c8326f295770793aeab
           }
       }
     //return islogin;

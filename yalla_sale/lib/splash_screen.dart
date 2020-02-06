@@ -1,14 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'Home.dart';
 import 'loginpage.dart';
 import 'package:grafpix/icons.dart';
 import 'package:grafpix/pixloaders/pix_loader.dart';
 import 'package:grafpix/pixbuttons/radial.dart';
-=======
-import 'login.dart';
->>>>>>> 0b88579b875d3483964d6c8326f295770793aeab
+//import 'login.dart';
 class splash_screen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -31,7 +28,7 @@ class _Splash_ScreenState extends State<splash_screen>{
   }
   route(){
     Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => LoginPage()
+        builder: (context) => Home()
     ));
   }
   @override

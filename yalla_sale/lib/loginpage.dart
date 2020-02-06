@@ -149,14 +149,8 @@ class _LoginPageState extends State<LoginPage>
                                     child: SizedBox(
                                         height: 30,width: 100,
                                         child:FlatButton(
-                                          onPressed:(){
-                                            Navigator.of(context)
-                                                .push(
-                                                MaterialPageRoute(
-                                                    builder: (context) => MyApp()
-                                                )
-                                            );
-                                          },
+                                          onPressed:done
+                                          ,
                                           child: Text("Log In"),
                                           color: Colors.green,
                                           shape: RoundedRectangleBorder(
@@ -185,18 +179,19 @@ class _LoginPageState extends State<LoginPage>
 
                                   ),
                                 ),
-                                /*Card(
-                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),color: Colors.lime,
+                                Card(
+                                  margin: EdgeInsets.fromLTRB(10,20, 10,10),
+                                    //color: Colors.lime,
                                   child: SizedBox(
                                       height: 30,width: 120,
                                       child:FlatButton(
-
+                                        color: Colors.lightGreen,
                                         onPressed: done,
                                         //label: Text('Done'),
                                         child: Text("Registration"),
                                       )
                                   )
-                              ),*/
+                              ),
                               ],
                             ),
                           ),

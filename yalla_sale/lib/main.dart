@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yalla_sale/MyHomePage.dart';
-import 'login.dart';
 import 'splash_screen.dart';
 void main() => runApp(MyApp());
 
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home:LoginPage(),
+      home:splash_screen(),
     );
   }
 

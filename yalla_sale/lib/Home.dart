@@ -40,9 +40,9 @@ class stateHome extends State<Home>
 
   void done() async{
     // user().inert();
-    Future <bool> isfind = UsData().find(Uemail,Upass);
-    print(isfind);
-    if(isfind==true)
+    UsData().find(Uemail,Upass);
+    print(UsData().islogin);
+    if(UsData().islogin==true)
       {
         Navigator.push(context,MaterialPageRoute(builder: (context)=> MyHomePage()) );
       }

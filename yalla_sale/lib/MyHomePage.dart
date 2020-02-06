@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:yalla_sale/RagabPage.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:yalla_sale/login.dart';
 import 'Product.dart';
 import 'RagabPage.dart';
 import 'OriflamePage.dart';
 import 'fav.dart';
+import 'loginpage.dart';
 class Home extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -209,18 +209,18 @@ class _MyHomePageState extends State<MyHomePage> {
               tabs: <Widget>[
                 Tab(
                   child: Row(
-                    children: <Widget>[Icon(Icons.home), Text("Home")],
+                    children: <Widget>[Icon(Icons.home,color:Colors.lightGreenAccent[400]), Text("Home")],
                   ),
                 ),
                 Tab(
                   child: Row(
-                    children: <Widget>[Icon(Icons.shop_two), Text("Shop")],
+                    children: <Widget>[Icon(Icons.shop_two,color:Colors.tealAccent), Text("Shop")],
                   ),
                 ),
                 Tab(
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.whatshot),
+                      Icon(Icons.whatshot,color:Colors.deepOrange ,),
                       Text("Best offers")
                     ],
                   ),
